@@ -1,0 +1,26 @@
+1. Вывести на экран список объектов стран из JSON.
+$..results.*.name
+
+2. Вывести на экран список имён стран расположенных в "Caribbean" саб регионе("geographicSubRegionCode").
+$..results[?(@.geographicSubRegionCode.name ==  "Caribbean")].name
+
+3. Вывести на экран "id" для страны "Bosnia and Herzegovina".
+$..results[?(@.name=="Bosnia and Herzegovina")].id
+
+4. Вывести на экран список саб регионов.
+$..geographicSubRegionCode.name
+
+5. Вывести на экран имя "name" страны с кодом("codeNumeric") 166.
+$..results[?(@.codeNumeric==166)].geographicRegionCode.name
+
+6.Вывести на экран общее количество стран ("totalCount").
+$..totalCount
+
+7. Вывести на экран все имена полей("fields").
+$..fields.*.name
+
+8. Вывести на экран имена всех стран у которых codeNumeric > 500 
+$..results[?(@.codeNumeric > 500)].name
+
+9. Вывести на экран id всех стран у которых codeNumeric > 100 и < 200.
+$..results[?(@.codeNumeric > 100 && @.codeNumeric < 200)].id
